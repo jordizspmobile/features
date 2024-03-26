@@ -9,7 +9,7 @@ plugins {
 }
 
 android {
-    namespace = "es.apruebalo.home"
+    namespace = "es.apruebalo.splash"
 }
 
 dependencies {
@@ -19,4 +19,10 @@ dependencies {
 
     implementation(Dependencies.Core.daggerHilt)
     kapt(Dependencies.Core.daggerHiltAndroidCompiler)
+
+    // Tests
+    testImplementation(Dependencies.Tests.junit)
+    androidTestImplementation(Dependencies.Tests.junit)
+    androidTestImplementation(Dependencies.Tests.junitExtension)
+    androidTestImplementation(Dependencies.Tests.espresso)
 }

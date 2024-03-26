@@ -1,22 +1,18 @@
 import es.apruebalo.gradle.dependencies.Dependencies
 
 plugins {
-    kotlin("kapt")
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
-    id("dagger.hilt.android.plugin")
     id("shared-properties")
 }
 
 android {
-    namespace = "es.apruebalo.home"
+    namespace = "es.apruebalo.navigator"
 }
 
 dependencies {
 
-    implementation(project(":features:common-ui"))
     implementation(project(":features:navigator-utils"))
-
-    implementation(Dependencies.Core.daggerHilt)
-    kapt(Dependencies.Core.daggerHiltAndroidCompiler)
+    implementation(project(":features:splash"))
+    implementation(project(":features:home"))
 }
